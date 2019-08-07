@@ -1,0 +1,6 @@
+library(dplyr)
+library(ggplot2)
+JDG <- read.csv("C:/Users/epica/Desktop/CUNY ASRC/Excel Activity/Ridgetop 1995-2019 Refined.csv", sep = ",", header = TRUE)
+JDG1 <- group_by(JDG, ï..AvgTEMP_C)
+JDG2 <- select(JDG1, ï..AvgTEMP_C, Month, Day, Year)
+JDG3 <- summarize(JDG2, dailymean = mean(JDG1$ï..AvgTEMP_C))
